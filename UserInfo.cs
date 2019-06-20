@@ -1,6 +1,8 @@
-//Add "Micron.Security.net into References
+//Add "Micron.Web.Net.dll" into References
 //Import Micron library
 using Micron.Web.Security;
+using System;
+
 
 namespace YourApplication.Classes.Helpers
 {
@@ -8,7 +10,7 @@ namespace YourApplication.Classes.Helpers
     {
         public static string GetUser()
         {
-			      string path;
+	    string path;
             path = System.IO.Path.GetDirectoryName(
                System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase);
 
@@ -18,7 +20,7 @@ namespace YourApplication.Classes.Helpers
                 if (user.Contains("\\"))
                     user = user.Split('\\')[1]; // Strip the domain if present
 
-				        return user;
+		return user;
             }
             else
             {
